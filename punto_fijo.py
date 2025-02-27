@@ -44,8 +44,6 @@ def punto_fijo(funcion, x_0, tolerancia, max_iter):
     plt.figure(figsize=(8,6))
     plt.plot(x_vals, y_gx, label=r"$g(x)$", color="g")
     plt.plot(x_vals, y_identity, label=r"$y = x$", color="r", linestyle="--")
-    plt.scatter(iteraciones[-1], g(iteraciones[-1]), color="black", zorder=3, label=f"Raíz aproximada: {iteraciones[-1]:.6f}")
-    
     plt.axhline(0, color='k', linewidth=1)
     plt.axvline(0, color='k', linewidth=1)
     plt.xlabel("x")
