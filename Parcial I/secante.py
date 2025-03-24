@@ -11,8 +11,8 @@ def secante(funcion, x_0, x_1, tolerancia, max_iter):
             break
         
         x_2 = x_1 - f(x_1) * (x_1 - x_0) / (f(x_1) - f(x_0))
-        errores.append(abs(x_2 - math.sqrt(7)))  # Guardar error absoluto
-        iteraciones.append(iter + 1)  # Guardar número de iteración
+        errores.append(abs(x_2 - math.sqrt(7)))  
+        iteraciones.append(iter + 1)  
         
         x_0 = x_1
         x_1 = x_2

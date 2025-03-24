@@ -9,11 +9,11 @@ def regula_falsi(funcion, a, b, tolerancia, max_iter):
     errores = []
     iteraciones = []
     iter = 0
-    raiz_aprox = (a + b) / 2  # Inicialización
+    raiz_aprox = (a + b) / 2  
     while abs(a - b) >= tolerancia and iter < max_iter:
         x_r = b - (f(b) * (a - b)) / (f(a) - f(b))
-        errores.append(abs(x_r - math.sqrt(7)))  # Guardar error absoluto
-        iteraciones.append(iter + 1)  # Guardar número de iteración
+        errores.append(abs(x_r - math.sqrt(7))) 
+        iteraciones.append(iter + 1)  
         
         if f(a) * f(x_r) == 0:
             return x_r, errores, iteraciones
