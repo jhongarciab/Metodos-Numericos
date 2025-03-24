@@ -35,17 +35,23 @@ def graficar_errores():
     plt.grid()
     plt.show()
     
-    # Crear una tabla comparativa
+    # Crear una tabla comparativa de errores
     max_len = max(len(iteraciones) for _, (_, _, iteraciones) in metodos.items())
-    tabla = {"Iteración": list(range(1, max_len + 1))}
+    tabla_errores = {"Iteración": list(range(1, max_len + 1))}
     
     for nombre, (_, errores, iteraciones) in metodos.items():
         errores_extendidos = errores + [None] * (max_len - len(errores))
-        tabla[nombre] = errores_extendidos
+        tabla_errores[nombre] = errores_extendidos
     
-    df = pd.DataFrame(tabla)
+    df_errores = pd.DataFrame(tabla_errores)
     print("\nTabla comparativa de convergencia:")
-    print(df.to_string(index=False))
+    print(df_errores.to_string(index=False))
+    
+    # Crear una tabla comparativa de raíces
+    tabla_raices = {"Método": list(metodos.keys()), "Raíz Aproximada": [f"{raiz:.20f}" for raiz, _, _ in metodos.values()]}
+    df_raices = pd.DataFrame(tabla_raices)
+    print("\nTabla comparativa de raíces aproximadas:")
+    print(df_raices.to_string(index=False))
 
 if __name__ == "__main__":
     graficar_errores()
