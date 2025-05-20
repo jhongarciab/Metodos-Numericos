@@ -1,6 +1,6 @@
 import math
 
-def punto_fijo(funcion, x_0, max_iter):
+def punto_fijo(x_0, max_iter):
     f = lambda x: 7 / x 
     
     errores = []
